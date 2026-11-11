@@ -1,0 +1,20 @@
+# syntax=docker/sandbox-kit:3
+schemaVersion: "3"
+kind: mixin
+displayName: yasukei/sbx-kits/base
+description: My base config
+
+capabilities:
+  - type: com.docker.sandbox/git-identity@1
+  - type: com.docker.sandbox/lifecycle@1
+    config:
+      install:
+        - command: |
+            set -eu
+            git config --global --unset-all url."https://github.com/".insteadOf || true
+            git config --global --add url."https://github.com/".insteadOf "git@github.com:"
+            git config --global --add url."https://github.com/".insteadOf "ssh://git@github.com/"
+            git config --global --add url."https://github.com/".insteadOf "git://github.com/"
+          user: "1000"
+          description: Rewrite GitHub SSH/git URLs to HTTPS
+

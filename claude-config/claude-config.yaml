@@ -1,0 +1,25 @@
+# syntax=docker/sandbox-kit:3
+schemaVersion: "3"
+kind: mixin
+displayName: yasukei/sbx-kits/claude-config
+description: My claude config
+requires: ["claude"]
+
+build: |
+  # syntax=docker/dockerfile:1
+  FROM scratch
+  COPY --chmod=0755 status-line.sh /usr/local/share/my-kits/claude/status-line.sh
+
+capabilities:
+  - type: com.docker.sandbox/lifecycle@1
+    config:
+      install:
+        - command: |
+            set -eu
+            f="$HOME/.claude/settings.json"
+            mkdir -p "$(dirname "$f")"
+            [ -s "$f" ] || echo '{}' > "$f"
+            jq '.statusLine = {"type":"command","command":"/usr/local/share/my-kits/claude/status-line.sh"}' \
+              "$f" > "$f.tmp" && mv "$f.tmp" "$f"
+          user: "1000"
+          description: Add custom statusline
