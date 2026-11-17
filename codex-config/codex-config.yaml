@@ -1,0 +1,33 @@
+# syntax=docker/sandbox-kit:3
+schemaVersion: "3"
+kind: mixin
+displayName: yasukei/sbx-kits/codex-config
+description: My codex config
+requires: ["codex"]
+
+capabilities:
+  - type: com.docker.sandbox/lifecycle@1
+    config:
+      install:
+        - command: |
+            set -eu
+            f="$HOME/.codex/config.toml"
+            mkdir -p "$(dirname "$f")"
+            touch "$f"
+            # Replace our own block, so a rerun doesn't duplicate [tui].
+            sed -i '/^# >>> codex-config >>>$/,/^# <<< codex-config <<<$/d' "$f"
+            cat >> "$f" <<'EOF'
+            # >>> codex-config >>>
+            [tui]
+            status_line = [
+              "model-with-reasoning",
+              "current-dir",
+              "thread-name",
+              "context-used",
+              "five-hour-limit",
+              "weekly-limit",
+            ]
+            # <<< codex-config <<<
+            EOF
+          user: "1000"
+          description: Add custom TUI status line
