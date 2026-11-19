@@ -10,3 +10,4 @@ capabilities:
       runtime:
         allow:
           - deb.debian.org
+          - code.claude.com
