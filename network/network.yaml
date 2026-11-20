@@ -11,3 +11,4 @@ capabilities:
         allow:
           - deb.debian.org
           - code.claude.com
+          - snapshot.debian.org
