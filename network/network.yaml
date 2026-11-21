@@ -13,3 +13,6 @@ capabilities:
           - code.claude.com
           - snapshot.debian.org
           - fonts.bunny.net
+          - packages.sury.org
+          - www.postgresql.org
+          - apt.postgresql.org
