@@ -12,3 +12,4 @@ capabilities:
           - deb.debian.org
           - code.claude.com
           - snapshot.debian.org
+          - fonts.bunny.net
