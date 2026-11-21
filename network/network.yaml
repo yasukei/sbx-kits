@@ -14,5 +14,7 @@ capabilities:
           - snapshot.debian.org
           - fonts.bunny.net
           - packages.sury.org
+          - laravel.com
+          - boost.laravel.com
           - www.postgresql.org
           - apt.postgresql.org
