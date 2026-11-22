@@ -28,17 +28,4 @@ sbx run codex --kit ./base --kit ./network --kit ./codex-config
 
 ## Usage
 
-```sh
-# Allow github.com/yasukei/
-sbx settings set kit.allowedSources '["docker.io/","dhi.io/","github.com/yasukei/"]'
-
-# Run a new sandbox
-sbx run shell \
-  --kit sbx/claude-mixin \
-  --kit sbx/codex-mixin \
-  --kit "git+https://github.com/yasukei/sbx-kits.git#dir=base" \
-  --kit "git+https://github.com/yasukei/sbx-kits.git#dir=network" \
-  --kit "git+https://github.com/yasukei/sbx-kits.git#dir=claude-config" \
-  --kit "git+https://github.com/yasukei/sbx-kits.git#dir=codex-config"
-```
-
+See [yasukei/sbx-workspace](https://github.com/yasukei/sbx-workspace).
