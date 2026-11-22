@@ -9,7 +9,6 @@ capabilities:
     config:
       runtime:
         allow:
-          - deb.debian.org
           - code.claude.com
           - snapshot.debian.org
           - fonts.bunny.net
