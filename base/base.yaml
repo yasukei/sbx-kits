@@ -20,4 +20,10 @@ capabilities:
         - command: git config --global core.pager less
           user: "1000"
           description: Use less as the git pager (Debian's default 'pager' is missing)
+        - command: |
+            set -eu
+            apt-get update
+            apt-get install -y --no-install-recommends shellcheck
+          user: "0"
+          description: Install shellcheck
 

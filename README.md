@@ -6,7 +6,7 @@ My personal [Docker Sandboxes](https://docs.docker.com/ai/sandboxes/) kits (sche
 
 | Kit | Kind | Description |
 |---|---|---|
-| [`base`](base/) | mixin | Git identity, and GitHub SSH/git URLs rewritten to HTTPS |
+| [`base`](base/) | mixin | Git identity, GitHub SSH/git URLs rewritten to HTTPS, and `shellcheck` |
 | [`network`](network/) | mixin | Common network allow list (e.g. `deb.debian.org`) |
 | [`claude-config`](claude-config/) | mixin | Claude Code status line. Requires `claude` |
 | [`codex-config`](codex-config/) | mixin | Codex status line. Requires `codex` |
