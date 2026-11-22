@@ -18,3 +18,4 @@ capabilities:
           - boost.laravel.com
           - www.postgresql.org
           - apt.postgresql.org
+          - www.anthropic.com 
